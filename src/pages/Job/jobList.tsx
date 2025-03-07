@@ -28,7 +28,7 @@ const JobListings: React.FC<signinProps> = ({isAuthenticated}) => {
   useEffect(() => {
     const fetchJobs = async () => {
       try {
-        const { data } = await axios.get("/api/jobs");
+        const { data } = await axios.get("https://jobboardbackend-fbjw.onrender.com/api/jobs");
         
         setJobs(data);
       } catch (error) {
@@ -92,7 +92,7 @@ const JobListings: React.FC<signinProps> = ({isAuthenticated}) => {
  
       try {
         const res = await axios.post(
-          "/api/applications",
+          "https://jobboardbackend-fbjw.onrender.com/api/applications",
           {
             resumeData,
             jobId,

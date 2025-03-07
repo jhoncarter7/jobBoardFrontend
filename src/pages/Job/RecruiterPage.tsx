@@ -55,7 +55,7 @@ const RecruiterPage: React.FC = () => {
   const fetchJobs = async () => {
     setIsLoading(true);
     try {
-      const response = await axios.get("/api/jobs/listedJob", {
+      const response = await axios.get("https://jobboardbackend-fbjw.onrender.com/api/jobs/listedJob", {
         withCredentials: true
       });
       console.log("jobs", response.data)
@@ -74,7 +74,7 @@ const RecruiterPage: React.FC = () => {
   const fetchApplicationsForJob = async (jobId: string) => {
     setIsLoading(true);
     try {
-      const response = await axios.get(`/api/jobs/${jobId}`, {
+      const response = await axios.get(`https://jobboardbackend-fbjw.onrender.com/api/jobs/${jobId}`, {
         withCredentials: true
       });
       if (!response) {
@@ -96,7 +96,7 @@ const RecruiterPage: React.FC = () => {
     setError('');
 
     try {
-      const response = await axios.post("/api/jobs/create-job", {
+      const response = await axios.post("https://jobboardbackend-fbjw.onrender.com/api/jobs/create-job", {
         title,
         description,
         status
@@ -127,7 +127,7 @@ const RecruiterPage: React.FC = () => {
     setError('');
 
     try {
-      const response = await axios.put(`/api/jobs/${updateJobId}`, {
+      const response = await axios.put(`https://jobboardbackend-fbjw.onrender.com/api/jobs/${updateJobId}`, {
         title,
         description,
         status
@@ -160,7 +160,7 @@ const RecruiterPage: React.FC = () => {
 
   const handleGetSingleJob = async(jobId: string)=> {
    
-    const response = await axios.get(`/api/jobs/${jobId}`, {
+    const response = await axios.get(`https://jobboardbackend-fbjw.onrender.com/api/jobs/${jobId}`, {
       withCredentials: true
     });
     console.log(response.data)
@@ -172,7 +172,7 @@ const RecruiterPage: React.FC = () => {
   }
 
    const handleDeleteJob = async(jobId: string)=>{
-      const res = await axios.delete(`/api/jobs/${jobId}`, {
+      const res = await axios.delete(`https://jobboardbackend-fbjw.onrender.com/api/jobs/${jobId}`, {
         withCredentials: true
       })
       console.log(res.data.message)

@@ -19,7 +19,7 @@ const ApplicationsList: React.FC<JobIdProps> = ({ jobId }) => {
     const fetchCandidates = async () => {
       try {
         const res = await axios.post(
-          "/api/applications/applicant",
+          "https://jobboardbackend-fbjw.onrender.com/api/applications/applicant",
           { jobId },
           { withCredentials: true }
         );
